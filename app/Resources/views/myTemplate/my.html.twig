@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    My page
+{% endblock %}
+
+{% block body %}
+    <h1>It works! {{ test }}</h1>
+
+    {{ form_start(form, {'method': 'get', 'attr': {'id': 'toto', 'novalidate': 'novalidate', 'class': 'form form-inline'}}) }}
+
+        <div class="errors">
+            {{ form_errors(form) }}
+        </div>
+
+        {{ form_row(form.name) }}
+
+        {{ form_widget(form.submit) }}
+        {{ form_widget(form.delete) }}
+
+    {{ form_end(form) }}
+{% endblock %}
